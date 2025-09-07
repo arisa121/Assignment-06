@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plant Earth</title>
+    <!-- DaisyUI & Tailwind cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <header class="">
+      <div class="navbar bg-green-700 flex justify-between items-center">
+        <h2 class="text-white ml-10">Green Earth</h2>
+        <ul class="flex justify-center gap-4 text-white">
+          <li>About</li>
+          <li>Gallary</li>
+          <li>Plant a Tree</li>
+        </ul>
+        <button class="btn btn-warning rounded-2xl mr-10">Plant a Tree</button>
+      </div>
+    </header>
+    <main>
+      <section class="bg-[#CFF0DC] w-full flex justify-between items-center">
+        <div>
+          <img src="assets/hero-leaf1.png" alt="" />
+        </div>
+        <div class="">
+          <h1 class="font-bold text-3xl text-center">Plant a Tree, Grow a Future</h1>
+          <p class="text-[#1F2937] text-center text-xs">
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future generations.
+          </p>
+           <button class="btn btn-warning rounded-2xl mr-10">Get Involved</button>
+        </div>
+        <div class="bg-cover">
+            <img src="assets/hero-leaf2.png" alt="">
+        </div>
+      </section>
+      <div>
+
+      </div>
+      <section class="bg-green-50 ml-28 mr-28">
+        <h1 class="text-center font-bold text-2xl mt-9 mb-5">Chooce Your Trees</h1>
+        <h3 class="font-semibold mb-2">Categories</h3>
+        <div id="all-trees" class="w-[15%] h-[300px]">
+        </div>
+        <div class="w-[70%] bg-red-400 h-[300px]">
+
+        </div>
+        <div class="w-15% bg-blue-400 h-[300px]">
+
+        </div>
+      </section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
