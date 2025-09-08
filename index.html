@@ -30,32 +30,38 @@
           <img src="assets/hero-leaf1.png" alt="" />
         </div>
         <div class="">
-          <h1 class="font-bold text-3xl text-center">Plant a Tree, Grow a Future</h1>
+          <h1 class="font-bold text-3xl text-center">
+            Plant a Tree, Grow a Future
+          </h1>
           <p class="text-[#1F2937] text-center text-xs">
             Join our mission to plant 1 million trees and make the Earth greener
             for future generations.
           </p>
-           <button class="btn btn-warning rounded-2xl mr-10">Get Involved</button>
+          <button class="btn btn-warning rounded-2xl mr-10">
+            Get Involved
+          </button>
         </div>
         <div class="bg-cover">
-            <img src="assets/hero-leaf2.png" alt="">
+          <img src="assets/hero-leaf2.png" alt="" />
         </div>
       </section>
-      <div>
-
-      </div>
+      <div></div>
       <section class="bg-green-50 ml-28 mr-28">
-        <h1 class="text-center font-bold text-2xl mt-9 mb-5">Chooce Your Trees</h1>
-        <h3 class="font-semibold mb-2">Categories</h3>
-        <div id="all-trees" class="w-[15%] h-[300px]">
-        </div>
-        <div class="w-[70%] bg-red-400 h-[300px]">
-
-        </div>
-        <div class="w-15% bg-blue-400 h-[300px]">
-
+        <!-- <h1 class="text-center font-bold text-2xl mt-9 mb-5">Chooce Your Trees</h1>
+        <h3 class="font-semibold mb-2">Categories</h3> -->
+        <div class="flex w-full min-h-screen p-4 gap-4">
+          <div class="w-[15%]">
+            <h2 class="font-semibold mb-2">Categories</h2>
+            <button class="bg-green-700 w-full text-left text-white rounded-sm">
+              All Trees
+            </button>
+            <div id="tree-category"></div>
+          </div>
+          <div class="w-[70%] grid grid-cols-3 gap-3" id="all-trees"></div>
+          <div class="w-[15%] bg-blue-400 h-[300px]"></div>
         </div>
       </section>
+     
     </main>
     <script src="js/script.js"></script>
   </body>
