@@ -15,6 +15,54 @@ const loadCategoryPlants =(id)=>{
     .then(res=>res.json())
     .then(json=> displaycategoryTree(json.plants))
 }
+
+
+// Modal Box JS Code
+
+const modalBox=async(id)=>{
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`
+    
+    const res = await fetch(url)
+    const detail = await res.json();
+    displayModalBox(detail.plants)   
+}
+const displayModalBox=(box)=>{
+    console.log(box)
+    const treeModalBox = document.getElementById("treeModal")
+    const modalbox = document.getElementById("modalContainer")
+    const closeBtn = document.getElementById("closeModalBtn")
+    modalbox.innerHTML = `
+    <!-- Tree Name -->
+    <h2 class="text-2xl font-bold text-green-700 mb-4">
+      ${box.name}
+    </h2>
+
+    <!-- Tree Image -->
+    <img src="${box.image}" alt="Tree Image"
+         class="w-full h-48 object-cover rounded mb-4" />
+
+    <!-- Category -->
+    <p class="text-gray-700 mb-2">
+      <strong>Category:</strong>${box.category}
+    </p>
+
+    <!-- Price -->
+    <p class="text-gray-700 mb-2">
+      <strong>price:</strong>৳${box.price}
+    </p>
+
+    <!-- Description -->
+    <p id="treeDescription" class="text-gray-700 mb-4">
+      <strong>Description:</strong>${box.description}
+    </p> 
+    `;
+    treeModalBox.showModal();
+    closeBtn.addEventListener('click',()=>{
+        treeModalBox.close()
+
+    })
+
+}
 const displaycategoryTree =(section)=>{
     // console.log(section)
     const treeAll = document.getElementById("all-trees");
@@ -30,7 +78,7 @@ const displaycategoryTree =(section)=>{
         <img src="${plant.image}" alt="${plant.name}" class="h-40 w-full object-cover rounded-md mb-4" />
 
         <!-- Title -->
-        <h2 class="text-lg font-semibold text-gray-800">${plant.name}</h2>
+        <h2 onclick="modalBox(${plant.id})" class="text-lg font-semibold text-gray-800">${plant.name}</h2>
 
         <!-- Description -->
         <p class="text-sm text-gray-600 mt-1 flex-grow">${plant.description.length > 80 ? plant.description.substring(0, 80) + "...":plant.description}</p>
@@ -89,7 +137,7 @@ const displayTrees=(trees)=>{
         <img src="${plant.image}" alt="${plant.name}" class="h-40 w-full object-cover rounded-md mb-4" />
 
         <!-- Title -->
-        <h2 class="text-lg font-semibold text-gray-800">${plant.name}</h2>
+        <h2 onclick="modalBox(${plant.id})" class="text-lg font-semibold text-gray-800">${plant.name}</h2>
 
         <!-- Description -->
         <p class="text-sm text-gray-600 mt-1 flex-grow">${plant.description.length > 80 ? plant.description.substring(0, 80) + "...":plant.description};
@@ -101,17 +149,27 @@ const displayTrees=(trees)=>{
         </div>
 
         <!-- Add to Cart Button -->
-        <button class="w-full mt-4 bg-green-600 text-white py-2 rounded-full hover:bg-green-700 transition">Add to Cart</button>
+        <button onclick="addCart(${plant.id})" class="w-full mt-4 bg-green-600 text-white py-2 rounded-full hover:bg-green-700 transition">Add to Cart</button>
       </div>
         `;
     //     // 4.append into container 
         treeAll.append(treeDiv);
-
-
-
+        const addCart=(id)=>{
+  console.log(id)
+}    
+        
     }
-
-   
-
+      
+      
+      
+    // const addCart=()=>{
+    // const url="https://openapi.programming-hero.com/api/plants"
+    // fetch(url)
+    // .then(res=>res.json())
+    // .then(json=> displayTrees(json.plants))
+    //   console.log(id)
+    //   }
 };
+
+
 allTress()

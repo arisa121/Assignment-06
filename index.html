@@ -45,7 +45,11 @@
           <img src="assets/hero-leaf2.png" alt="" />
         </div>
       </section>
-      <div></div>
+      <div class="bg-green-50">
+        <h2 class="text-center font-medium text-xl mb-2 pt-10 pb-3">
+              Chooce Your Trees
+            </h2>
+      </div>
       <section class="bg-green-50 ml-28 mr-28">
         <!-- <h1 class="text-center font-bold text-2xl mt-9 mb-5">Chooce Your Trees</h1>
         <h3 class="font-semibold mb-2">Categories</h3> -->
@@ -57,12 +61,58 @@
             </button>
             <div id="tree-category"></div>
           </div>
-          <div class="w-[70%] grid grid-cols-3 gap-3" id="all-trees"></div>
-          <div class="w-[15%] bg-blue-400 h-[300px]"></div>
+          <div class="w-[70%]">
+            
+            <div class="grid grid-cols-3 gap-3" id="all-trees"></div>
+          </div>
+          <div class="w-[15%] bg-white">
+            <h2 class="font-medium">Your Cart</h2>
+            <div id="cart"></div>
+          </div>
         </div>
+        <section  class="ml-[15%] mr-[15%]">
+          <h2 class="text-center font-medium text-xl mb-4">
+            About the Campaign
+          </h2>
+          
+            <div class="flex gap-5 justify-between items-center mb-7">
+            <img class="w-full h-full" src="assets/about.png" alt="" srcset="" />
+            <div class="">
+              <p>
+              Green Earth is a global tree plantation initiative dedicated to
+              fighting climate change. Since our start, we’ve planted over
+              500,000 trees worldwide. By joining our campaign, you help restore
+              forests, create habitats for wildlife, and combat global warming.
+            </p>
+            <ul>
+              <li>Restoration of natural habitats</li>
+              <li>Improvement of air quality</li>
+              <li>Support for local communities</li>
+            </ul>
+            </div>
+          </div>
+        </section>
       </section>
-     
     </main>
+
+    <!-- Modal Box Design -->
+    <!-- Modal Dialog -->
+    <dialog
+      id="treeModal"
+      class="rounded-lg shadow-xl w-full max-w-md p-6 backdrop:bg-black/30"
+    >
+      <div id="modalContainer" class=""></div>
+
+      <!-- Close Button -->
+      <div class="text-right">
+        <button
+          id="closeModalBtn"
+          class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          ✕
+        </button>
+      </div>
+    </dialog>
     <script src="js/script.js"></script>
   </body>
 </html>
